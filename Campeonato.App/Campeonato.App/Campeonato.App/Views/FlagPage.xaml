@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Campeonato.App.Views.FlagPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Orientation="Horizontal"
+                >
+                <Image 
+                    Source="baseline_close_black_48dp.png"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                />
+                <Label Text="08/07/2014"
+                       FontSize="20"       
+                       HorizontalOptions="Start"
+                />
+                <Image 
+                    Source="baseline_search_black_48dp.png"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    HorizontalOptions="EndAndExpand"
+                />
+
+            </StackLayout>
+            <Image
+                BackgroundColor="Gray"
+                HeightRequest="1"
+                HorizontalOptions="FillAndExpand"
+                />
+            <ListView
+                HasUnevenRows="True"
+                ItemsSource="{Binding jogos}"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Padding="10,0,10,0"
+                                >
+                                <StackLayout
+                                    Orientation="Horizontal"
+                                    >
+                                    <Label
+                                        Text="{Binding dataFormatada}"
+                                        HorizontalOptions="Start"
+                                        FontSize="20"
+                                        />
+                                    <Label
+                                        Text="{Binding estadio}"
+                                        HorizontalOptions="EndAndExpand"
+                                        FontSize="20"
+                                        />
+                                </StackLayout>
+                                <StackLayout
+                                    Orientation="Horizontal"
+                                    >
+                                    <Image
+                                        Source="{Binding bandeiraCasa}"
+                                        WidthRequest="100"
+                                        />
+                                    <Label
+                                        Text="{Binding placarCasa}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        FontSize="28"
+                                        />
+                                    <Label
+                                        Text="X"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        FontSize ="28"
+                                        />
+                                    <Label
+                                        Text="{Binding placarVisitante}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="CenterAndExpand"
+                                        FontSize="28"
+                                        />
+                                    <Image
+                                        Source="{Binding bandeiraVisitante}"
+                                        WidthRequest="100"
+                                        />
+                                </StackLayout>
+                                <StackLayout
+                                    Orientation="Horizontal"
+                                    >
+                                    <Label
+                                        Text="{Binding selecaoCasaNome}"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="CenterAndExpand"
+                                        FontSize="25"
+                                        />
+                                    <StackLayout
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    >
+                                        <Label
+                                        Text="{Binding penaltisCasa}"
+                                        FontSize="16"
+                                        HorizontalOptions="CenterAndExpand"
+                                        />
+                                        <Label
+                                        Text="X"
+                                        FontSize="16"
+                                        />
+                                        <Label
+                                        Text="{Binding penaltisVisitante}"
+                                        FontSize="16"
+                                        HorizontalOptions="EndAndExpand"
+                                        />
+                                    </StackLayout>
+                                    <Label
+                                        Text="{Binding selecaoVisitanteNome}"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="EndAndExpand"
+                                        FontSize="25"
+                                        />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
